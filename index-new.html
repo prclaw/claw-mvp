@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeCraft AI - Get 3x More Interviews with AI-Optimized Resumes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables - Brand Colors */
+        :root {
+            --primary-blue: #2563eb;
+            --dark-blue: #1e40af;
+            --light-blue: #60a5fa;
+            --accent-orange: #f59e0b;
+            --success-green: #10b981;
+            --warning-red: #ef4444;
+            --dark-gray: #1f2937;
+            --medium-gray: #4b5563;
+            --light-gray: #9ca3af;
+            --bg-gray: #f8f9fa;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-xxl: 64px;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--medium-gray);
+            background-color: var(--bg-gray);
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .section {
+            padding: var(--spacing-xxl) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: var(--medium-gray);
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-orange);
+            color: var(--white);
+        }
+
+        .btn-accent:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-lg {
+            padding: 20px 48px;
+            font-size: 18px;
+            border-radius: var(--radius-lg);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: var(--spacing-sm) 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-orange);
+        }
+
+        .logo-icon {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-xl);
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--medium-gray);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--medium-gray);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: var(--spacing-xxl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            margin-bottom: var(--spacing-md);
+            color: var(--dark-gray);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            color: var(--medium-gray);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 14px;
+            color: var(--medium-gray);
+        }
+
+        .trust-badge i {
+            color: var(--success-green);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .resume-mockup {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: var(--spacing-lg);
+            position: relative;
+            transform: rotate(3deg);
+        }
+
+        .resume-mockup:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-orange));
+            border-radius: var(--radius-lg);
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        /* How It Works Section */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        .step {
+            text-align: center;
+            padding: var(--spacing-lg);
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+            color: var(--white);
+            font-size: 32px;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            background: var(--accent-orange);
+            color: var(--white);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Benefits Grid */
+        .benefits {
+            background-color: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+        }
+
+        .benefit-card {
+            padding: var(--spacing-lg);
+            background: var(--bg-gray);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-4px);
+        }
+
+        .benefit-card:hover h3,
+        .benefit-card:hover p,
+        .benefit-card:hover .benefit-icon {
+            color: var(--white);
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Pricing Section */
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--accent-orange);
+            transform: scale(1.05);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--dark-gray);
+            margin: var(--spacing-md) 0;
+        }
+
+        .price span {
+            font-size: 24px;
+            color: var(--medium-gray);
+        }
+
+        .features-list {
+            list-style: none;
+            margin: var(--spacing-lg) 0;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: var(--spacing-xs) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .features-list li i {
+            color: var(--success-green);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+
+        .trust-stats {
+            text-align: center;
+        }
+
+        .trust-number {
+            font-size: 64px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .company-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+            justify-content: center;
+            margin-top: var(--spacing-lg);
+            opacity: 0.7;
+        }
+
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--bg-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-blue);
+        }
+
+        .stars {
+            color: var(--accent-orange);
+            margin-top: 4px;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            padding: var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background-color: var(--bg-gray);
+        }
+
+        .faq-answer {
+            padding: 0 var(--spacing-lg);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 var(--spacing-lg) var(--spacing-lg);
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+        }
+
+        .final-cta h2 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            margin-bottom: var(--spacing-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .guarantee-badges {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 50px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--light-gray);
+            padding: var(--spacing-xxl) 0 var(--spacing-lg);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            font-size: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-blue);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 40px;
+            }
+            
+            h2 {
+                font-size: 32px;
+            }
+            
+            .hero-container,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+            
+            .steps,
+            .benefits-grid,
+            .pricing-cards,
+            .testimonial-cards,
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 20px;
+            }
+            
+            .section {
+                padding: var(--spacing-xl) 0;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .steps,
+            .benefits-grid,
+            .pricing-cards,
+            .testimonial-cards,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .guarantee-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-sm {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .mb-md {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .mb-lg {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .mb-xl {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .mt-sm {
+            margin-top: var(--spacing-sm);
+        }
+        
+        .mt-md {
+            margin-top: var(--spacing-md);
+        }
+        
+        .mt-lg {
+            margin-top: var(--spacing-lg);
+        }
+        
+        .mt-xl {
+            margin-top: var(--spacing-xl);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-brain logo-icon"></i>
+                ResumeCraft<span>AI</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#cta" class="btn btn-primary btn-sm">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Get 3x More Interviews with AI-Optimized Resumes</h1>
+                <p>Tech-specific resume optimization that passes ATS systems. Get interview-ready in 24 hours.</p>
+                
+                <div class="hero-cta">
+                    <a href="#pricing" class="btn btn-accent btn-lg">
+                        <i class="fas fa-rocket"></i>
+                        Optimize My Resume - $10
+                    </a>
+                    <a href="#how-it-works" class="btn btn-outline btn-lg">
+                        <i class="fas fa-play-circle"></i>
+                        See How It Works
+                    </a>
+                </div>
+                
+                <div class="trust-badge mt-lg">
+                    <i class="fas fa-shield-check"></i>
+                    <span>Trusted by 500+ tech professionals</span>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="resume-mockup">
+                    <div class="step-number">1</div>
+                    <h3>Before: Generic Resume</h3>
+                    <p>• Managed projects<br>• Used programming languages<br>• Worked with teams</p>
+                    
+                    <div class="mt-lg">
+                        <i class="fas fa-arrow-down fa-2x" style="color: var(--accent-orange);"></i>
+                    </div>
+                    
+                    <div class="step-number">2</div>
+                    <h3>After: AI-Optimized Resume</h3>
+                    <p>• Led 3 projects increasing efficiency by 40%<br>• Built systems with Python/React reducing load time by 60%<br>• Mentored 5 junior developers improving team velocity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Get your resume optimized in 3 simple steps</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step fade-in">
+                    <div class="step-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>Upload & Describe</h3>
+                    <p>Share your current resume and target job description. Takes just 30 seconds.</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Optimization</h3>
+                    <p>Our AI analyzes and optimizes your resume for ATS systems. Ready in 24 hours.</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Download & Apply</h3>
+                    <p>Receive your optimized resume and start applying immediately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose ResumeCraft AI</h2>
+                <p>Six key benefits that set us apart</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <h3>ATS Compatibility Guarantee</h3>
+                    <p>Guaranteed to pass applicant tracking systems with proper formatting.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Tech-Specific Keyword Optimization</h3>
+                    <p>Industry-specific terminology for software engineering, data science, DevOps, and more.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Human + AI Review Process</h3>
+                    <p>Combined expertise ensures the best results for your career goals.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>24-Hour Delivery</h3>
+                    <p>Get your resume ready in 24 hours or less. No 7-day waits.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Industry-Specific Templates</h3>
+                    <p>Formats optimized for tech hiring managers and recruiters.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Interview Rate Tracking</h3>
+                    <p>Track your interview success rate improvement with our analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the plan that fits your needs</p>
+            </div>
+            
+            <div class="pricing-cards">
+                <!-- Basic Plan -->
+                <div class="pricing-card fade-in">
+                    <h3>BASIC</h3>
+                    <div class="price">$10</div>
+                    <p class="mb-lg">One-time optimization</p>
+                    
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> AI Resume Optimization</li>
+                        <li><i class="fas fa-check"></i> 24-hour turnaround</li>
+                        <li><i class="fas fa-check"></i> ATS-friendly formatting</li>
+                        <li><i class="fas fa-check"></i> Technical keyword enhancement</li>
+                        <li><i class="fas fa-check"></i> Achievement quantification</li>
+                        <li><i class="fas fa-check"></i> Change summary document</li>
+                        <li><i class="fas fa-check"></i> Money-back guarantee</li>
+                    </ul>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTw4_0QRKREudcdWbk2T2AH5QyHK0VJUN9Rq0sRqG9e6g6CA/viewform?usp=publish-editor" 
+                       class="btn btn-primary" 
+                       target="_blank">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Pro Plan (Popular) -->
+                <div class="pricing-card popular fade-in">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3>PRO</h3>
+                    <div class="price">$25</div>
+                    <p class="mb-lg">Everything in Basic plus:</p>
+                    
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> LinkedIn profile optimization</li>
+                        <li><i class="fas fa-check"></i> Cover letter template</li>
+                        <li><i class="fas fa-check"></i> 12-hour delivery</li>
+                        <li><i class="fas fa-check"></i> 1 revision included</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Industry-specific templates</li>
+                        <li><i class="fas fa-check"></i> Interview tracking dashboard</li>
+                    </ul>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTw4_0QRKREudcdWbk2T2AH5QyHK0VJUN9Rq0sRqG9e6g6CA/viewform?usp=publish-editor" 
+                       class="btn btn-accent" 
+                       target="_blank">
+                        Choose Pro Plan
+                    </a>
+                </div>
+                
+                <!-- Premium Plan -->
+                <div class="pricing-card fade-in">
+                    <h3>PREMIUM</h3>
+                    <div class="price">$50</div>
+                    <p class="mb-lg">Everything in Pro plus:</p>
+                    
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Interview prep guide</li>
+                        <li><i class="fas fa-check"></i> Priority processing (6 hours)</li>
+                        <li><i class="fas fa-check"></i> 30-day follow-up check</li>
+                        <li><i class="fas fa-check"></i> Unlimited revisions</li>
+                        <li><i class="fas fa-check"></i> Salary negotiation tips</li>
+                        <li><i class="fas fa-check"></i> Career path consultation</li>
+                        <li><i class="fas fa-check"></i> Extended support (90 days)</li>
+                    </ul>
+                    
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTw4_0QRKREudcdWbk2T2AH5QyHK0VJUN9Rq0sRqG9e6g6CA/viewform?usp=publish-editor" 
+                       class="btn btn-primary" 
+                       target="_blank">
+                        Go Premium
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-xl">
+                <p><i class="fas fa-lock"></i> All payments are secure. 100% money-back guarantee if you don't get more interviews.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted by Tech Professionals</h2>
+                <p>See what our customers say about their results</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="trust-stats fade-in">
+                    <div class="trust-number">500+</div>
+                    <h3>Tech Professionals</h3>
+                    <p>have transformed their resumes with us</p>
+                    
+                    <div class="company-logos">
+                        <div style="font-size: 32px; color: var(--medium-gray);">
+                            <i class="fab fa-google"></i>
+                            <i class="fab fa-amazon"></i>
+                            <i class="fab fa-microsoft"></i>
+                            <i class="fab fa-apple"></i>
+                            <i class="fab fa-meta"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-cards">
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h4>Sarah Chen</h4>
+                                <p>Senior Software Engineer</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Got 3 interviews in 2 weeks after using ResumeCraft AI. The ATS optimization made all the difference!"</p>
+                    </div>
+                    
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h4>Michael Rodriguez</h4>
+                                <p>Data Scientist</p>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"The tech-specific keywords helped me land a role at a FAANG company. Worth every penny!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our service</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>How does ATS optimization work?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We analyze job descriptions for keywords and ensure your resume matches them exactly. We also optimize formatting for ATS parsing, improve keyword density, and ensure proper section headers that ATS systems recognize.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>What makes tech resumes different?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tech resumes require specific keywords, project-based formatting, quantifiable technical achievements, and industry-specific terminology that generic services often miss. We specialize exclusively in tech roles including software engineering, data science, cybersecurity, DevOps, and cloud architecture.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>What's your turnaround time?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>24 hours maximum for Basic plan, 12 hours for Pro plan, and 6 hours for Premium plan. Most resumes are processed even faster. Compare this to professional services that take 7+ days.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Do you offer revisions?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For the $10 Basic plan, we deliver one optimized version. The Pro plan includes 1 revision, and the Premium plan includes unlimited revisions within 30 days.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Is there a money-back guarantee?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer a 100% money-back guarantee if you don't get at least 2x more interview calls within 30 days of using our optimized resume.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>How do you ensure privacy?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use encrypted file transfers, never share your data with third parties, and delete all files 30 days after delivery. Your resume is only seen by our AI system and human reviewers who sign strict NDAs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>What file formats do you accept?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept PDF, DOC, DOCX, and TXT files. We deliver optimized resumes in PDF and DOCX formats, along with a change summary document.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Can you help with specific tech roles?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We specialize in software engineering (frontend, backend, full-stack), data science, machine learning, cybersecurity, DevOps, cloud architecture, product management, and UX/UI design roles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="cta" class="section final-cta">
+        <div class="container">
+            <h2>Ready to Get 3x More Interviews?</h2>
+            <p>Limited weekend spots available - Book yours now before prices increase!</p>
+            
+            <div class="hero-cta">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTw4_0QRKREudcdWbk2T2AH5QyHK0VJUN9Rq0sRqG9e6g6CA/viewform?usp=publish-editor" 
+                   class="btn btn-accent btn-lg" 
+                   target="_blank">
+                    <i class="fas fa-bolt"></i>
+                    Optimize My Resume - $10
+                </a>
+                <a href="#pricing" class="btn btn-outline btn-lg" style="background: rgba(255,255,255,0.1); color: white; border-color: white;">
+                    <i class="fas fa-chart-bar"></i>
+                    Compare All Plans
+                </a>
+            </div>
+            
+            <div class="guarantee-badges">
+                <div class="badge">
+                    <i class="fas fa-shield-check"></i>
+                    100% Money-Back Guarantee
+                </div>
+                <div class="badge">
+                    <i class="fas fa-lock"></i>
+                    Secure & Private
+                </div>
+                <div class="badge">
+                    <i class="fas fa-clock"></i>
+                    24-Hour Delivery
+                </div>
+                <div class="badge">
+                    <i class="fas fa-star"></i>
+                    500+ Happy Customers
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ResumeCraft AI</h3>
+                    <p>AI-powered resume optimization specifically for tech professionals. Get interview-ready fast with our guaranteed ATS optimization.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-product-hunt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> prclaw88@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Response time: 24 hours</li>
+                        <li><i class="fas fa-globe"></i> Available worldwide</li>
+                        <li><i class="fas fa-bolt"></i> 24/7 order processing</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 ResumeCraft AI. All rights reserved. Mission: Help tech professionals land their dream jobs.</p>
+                <p class="mt-sm">This is an MVP for validation. Actual service delivery may vary.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                    if (navLinks.style.display === 'flex') {
+                        navLinks.style.flexDirection = 'column';
+                        navLinks.style.position = 'absolute';
+                        navLinks.style.top = '100%';
+                        navLinks.style.left = '0';
+                        navLinks.style.right = '0';
+                        navLinks.style.background = 'white';
+                        navLinks.style.padding = '20px';
+                        navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+                        navLinks.style.gap = '20px';
+                    }
+                });
+            }
+            
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Scroll Animations
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (window.innerWidth <= 768 && navLinks.style.display === 'flex') {
+                            navLinks.style.display = 'none';
+                        }
+                    }
+                });
+            });
+            
+            // Form submission handling
+            const ctaButtons = document.querySelectorAll('.btn[href*="google.com/forms"]');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Track conversion (placeholder for analytics)
+                    console.log('CTA clicked:', this.textContent.trim());
+                    
+                    // In production, you would add:
+                    // if (typeof gtag !== 'undefined') {
+                    //     gtag('event', 'conversion', {
+                    //         'send_to': 'AW-123456789/AbC-D_efGhIjKlMnOpQrSt',
+                    //         'value': this.textContent.includes('$10') ? 10 : 
+                    //                  this.textContent.includes('$25') ? 25 : 50,
+                    //         'currency': 'USD'
+                    //     });
+                    // }
+                });
+            });
+            
+            // Update trust counter (simulated)
+            const trustNumber = document.querySelector('.trust-number');
+            if (trustNumber) {
+                let current = 500;
+                const target = 527;
+                const increment = () => {
+                    if (current < target) {
+                        current += Math.floor(Math.random() * 3) + 1;
+                        trustNumber.textContent = current + '+';
+                        setTimeout(increment, 50);
+                    }
+                };
+                // Start counter after page loads
+                setTimeout(increment, 1000);
+            }
+        });
+        
+        // Simple analytics tracking
+        function trackEvent(eventName, eventData = {}) {
+            console.log(`Tracking: ${eventName}`, eventData);
+            // In production, integrate with Google Analytics:
+            // if (typeof gtag !== 'undefined') {
+            //     gtag('event', eventName, eventData);
+            // }
+        }
+        
+        // Track page views
+        window.addEventListener('load', () => {
+            trackEvent('page_view', {
+                page_title: document.title,
+                page_location: window.location.href
+            });
+        });
+    </script>
+</body>
+</html>
